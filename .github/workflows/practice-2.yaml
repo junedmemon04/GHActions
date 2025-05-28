@@ -1,0 +1,11 @@
+name: trigger on issue
+on:
+  issues:
+    types: [opened, edited, milestoned]
+
+jobs:
+  issue-trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Detail github event
+        run: echo "{{ github.event }}"
